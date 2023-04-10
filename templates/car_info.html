@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <h5 class="text-center mt-3">Результаты проверки Carcheck</h5>
+    <div class="conteiner">
+        <div class="row">
+            <div class="col-8 mx-auto mt-5">
+            {% if cars %}
+            {% for car in cars %}
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">По госномеру:</th>
+                    <th scope="row">{{car.license_plate}}</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Марка:</th>
+                    <th scope="row">{{car.brand}}</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Модель:</th>
+                    <th scope="row">{{car.model}}</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Год выпуска:</th>
+                    <th scope="row">{{car.year}}</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Цвет:</th>
+                    <th scope="row">{{car.color}}</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Расположения руля:</th>
+                    <th scope="row">{{car.rudder_location}}</th>
+                  </tr>
+                  <tr>
+                    <th scope="row">Объем двигателя:</th>
+                    <th scope="row">{{car.engine_volume}}</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <br>
+            {% endfor %}
+            {% else %}
+            </div>
+        </div>
+    <h1 class="text-center mt-3">Нет данных</h1>
+{% endif %}
+
+{% endblock %}
