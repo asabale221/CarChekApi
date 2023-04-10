@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="conteiner">
+        <div class="row">
+            <div class="col-8 mx-auto mt-5">
+                <h1 class="mb-5">Carcheck</h1>
+                <p class="mb-5">В данном разделе Вы можете проверить сведения о транспортном средстве, о наличии обременений и<br>
+                     периоды владения по госномеру.</p>
+
+                     <form action="{% url 'search-page' %}" method="get">
+                        <input type="search" type="text" name="search" placeholder="Поиск авто по гос номеру">
+                        <button type="submit">Поиск</button>
+                     </form>
+                     <br>
+            </div>
+        </div>
+    </div>
+{% endblock %}
